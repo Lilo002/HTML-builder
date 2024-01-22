@@ -5,7 +5,7 @@ const projectFolder = path.join(__dirname, 'files');
 const projectToCopy = path.join(__dirname, 'files-copy');
 
 async function copyDir(src, dest) {
-  await fs.rm(projectToCopy, { recursive: true });
+  await fs.rm(projectToCopy, { recursive: true, force: true });
   await fs.mkdir(dest);
 
   const files = await fs.readdir(src);
